@@ -16,7 +16,8 @@
     <PackageTags>Azure; Service Bus</PackageTags>
     <License>MIT</License>
     <IsTool>true</IsTool>
-    <RepositoryUrl>https://github.com/robinmanuelthiel/servicebusspy/</RepositoryUrl>    
+    <RepositoryUrl>https://github.com/robinmanuelthiel/servicebusspy</RepositoryUrl>    
+    <PackageIconUrl>https://raw.githubusercontent.com/robinmanuelthiel/servicebusspy/master/logo.png</PackageIconUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
