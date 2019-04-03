@@ -29,23 +29,25 @@ dotnet tool uninstall servicebusspy --global
 ### List all messages of a queue
 
 ```bash
-servicebusspy list --queue "Test" \
-                   --connectionString "YOUR_SERVICE_BUS_CONNECTION_STRING" \
-                   --verbose # optional
+servicebusspy list 
+  --queue "Test" \
+  --connectionString "YOUR_SERVICE_BUS_CONNECTION_STRING" \
+  --verbose # optional
 ```
 
 ### Add a message to a queue
 
 ```bash
 servicebusspy add "Message Content" \
-                  --queue "Test" \
-                  --connectionString "YOUR_SERVICE_BUS_CONNECTION_STRING"
+  --queue "Test" \
+  --connectionString "YOUR_SERVICE_BUS_CONNECTION_STRING"
 ```
 
 ### Subscribe to new messages in a queue
 
 ```bash
-servicebusspy subscribe --queue "Test" \
-                        --connectionString "YOUR_SERVICE_BUS_CONNECTION_STRING" \
-                        --verbose # optional
+servicebusspy subscribe 
+  --queue "Test" \
+  --connectionString "YOUR_SERVICE_BUS_CONNECTION_STRING" \
+  --verbose # optional
 ```
