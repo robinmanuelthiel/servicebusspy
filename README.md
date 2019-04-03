@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/robinmanuelthiel/servicebusspy/master/logo.png" height="100">
+<img src="https://raw.githubusercontent.com/robinmanuelthiel/servicebusspy/master/logo.png" height="90">
 
 # Azure Service Bus Spy
 
