@@ -1,4 +1,4 @@
-[![nuget](https://img.shields.io/nuget/v/ServiceBusSpy.svg)](https://www.nuget.org/packages/ServiceBusSpy/)
+[![NuGet](https://img.shields.io/nuget/vpre/servicebusspy.svg)](https://www.nuget.org/packages/ServiceBusSpy)
 
 # Service Bus Spy
 
