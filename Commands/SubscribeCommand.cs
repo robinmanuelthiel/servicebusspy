@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using McMaster.Extensions.CommandLineUtils;
 using Microsoft.Azure.ServiceBus;
 using Microsoft.Azure.ServiceBus.Core;
+using Newtonsoft.Json;
 
 namespace ServiceBusSpy.Commands
 {
@@ -18,6 +19,9 @@ namespace ServiceBusSpy.Commands
         [Required]
         [Option(LongName = "connectionString", ShortName = "c", Description = "The connection string of your service bus.")]
         public string ConnectionString { get; }
+
+        [Option(LongName = "verbose", ShortName = "v", Description = "Outputs the message as JSON instead of the content only")]
+        public bool Verbose { get; set; }
 
         public async Task<int> OnExecuteAsync(CommandLineApplication app, IConsole console)
         {
@@ -37,6 +41,12 @@ namespace ServiceBusSpy.Commands
         private Task ReceivedMessageAsync(Message message, CancellationToken cancel)
         {
             Console.WriteLine(System.Text.Encoding.Unicode.GetString(message.Body));
+            if (Verbose)
+            {
+                Console.WriteLine(JsonConvert.SerializeObject(message));
+                Console.WriteLine();
+            }
+
             return Task.CompletedTask;
         }
 

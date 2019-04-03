@@ -9,14 +9,14 @@ A simple command line tool to silently inspect Azure Service Bus messages withou
 Make sure to have at least [.NET Core 2.1](https://dotnet.microsoft.com/download) installed on your machine.
 
 ```bash
-dotnet tool install servicebusspy -g 
+dotnet tool install servicebusspy -g
 ```
 
 ### Update or remove
 
 ```bash
 # Update
-dotnet tool update servicebusspy -g 
+dotnet tool update servicebusspy -g
 
 # Remove
 dotnet tool uninstall servicebusspy -g
@@ -28,9 +28,9 @@ dotnet tool uninstall servicebusspy -g
 
 ```bash
 servicebusspy list --queue "Test" \
-                   --connectionString "YOUR_SERVICE_BUS_CONNECTION_STRING"
+                   --connectionString "YOUR_SERVICE_BUS_CONNECTION_STRING" \
+                   --verbose # optional
 ```
-
 
 ### Add a messages to a queue
 
@@ -44,5 +44,6 @@ servicebusspy add "Message Content" \
 
 ```bash
 servicebusspy subscribe --queue "Test" \
-                        --connectionString "YOUR_SERVICE_BUS_CONNECTION_STRING"
+                        --connectionString "YOUR_SERVICE_BUS_CONNECTION_STRING" \
+                        --verbose # optional
 ```

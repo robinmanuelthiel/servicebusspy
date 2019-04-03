@@ -10,7 +10,7 @@
   <PropertyGroup>
     <Title>Service Bus Spy</Title>
     <Description>Inspect Azure Service Bus messages silently without touching them.</Description>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.1.0</PackageVersion>
     <IsPackable>true</IsPackable> 
     <Authors>Robin-Manuel Thiel</Authors>
     <PackageTags>Azure; Service Bus</PackageTags>
@@ -23,5 +23,6 @@
   <ItemGroup>
     <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="2.3.3" />
     <PackageReference Include="Microsoft.Azure.ServiceBus" Version="3.4.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
   </ItemGroup>
 </Project>
