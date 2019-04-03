@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/robinmanuelthiel/servicebusspy/master/logo.png" height="100">
 
-# Service Bus Spy
+# Azure Service Bus Spy
 
 [![NuGet](https://img.shields.io/nuget/vpre/servicebusspy.svg)](https://www.nuget.org/packages/ServiceBusSpy)
 
