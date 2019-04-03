@@ -9,17 +9,17 @@ A simple command line tool to silently inspect Azure Service Bus messages withou
 Make sure to have at least [.NET Core 2.1](https://dotnet.microsoft.com/download) installed on your machine.
 
 ```bash
-dotnet tool install servicebusspy -g 
+dotnet tool install servicebusspy --global 
 ```
 
 ### Update or remove
 
 ```bash
 # Update
-dotnet tool update servicebusspy -g 
+dotnet tool update servicebusspy --global
 
 # Remove
-dotnet tool uninstall servicebusspy -g
+dotnet tool uninstall servicebusspy --global
 ```
 
 ## Usage
