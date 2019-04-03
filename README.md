@@ -32,7 +32,7 @@ servicebusspy list --queue "Test" \
                    --verbose # optional
 ```
 
-### Add a messages to a queue
+### Add a message to a queue
 
 ```bash
 servicebusspy add "Message Content" \
