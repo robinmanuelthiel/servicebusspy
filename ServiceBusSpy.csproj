@@ -10,11 +10,14 @@
   <PropertyGroup>
     <Title>Service Bus Spy</Title>
     <Description>Inspect Azure Service Bus messages silently without touching them.</Description>
-    <PackageVersion>0.1.0-pre</PackageVersion>
+    <PackageVersion>1.0.0</PackageVersion>
     <IsPackable>true</IsPackable> 
     <Authors>Robin-Manuel Thiel</Authors>
-    <PackageTags>Azure, Service Bus</PackageTags>
+    <PackageTags>Azure; Service Bus</PackageTags>
     <License>MIT</License>
+    <IsTool>true</IsTool>
+    <RepositoryUrl>https://github.com/robinmanuelthiel/servicebusspy/</RepositoryUrl>    
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>

@@ -18,16 +18,35 @@ public class Program
             Console.WriteLine();
             return app.Execute(args);
         }
-        catch (CommandParsingException cpe)
+        catch (Exception ex)
         {
-            Console.WriteLine("No such method.");
-            Console.WriteLine(cpe.Message);
+            if (ex is UnrecognizedCommandParsingException)
+            {
+                Console.WriteLine("Unknown command.");
+                app.ShowHelp();
+            }
+            else
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine();
+            }
+
+#if DEBUG
+            Console.WriteLine();
+            Console.WriteLine(ex);
+#endif
+
             return -1;
         }
         finally
         {
-            //Console.ReadLine();
             Console.WriteLine();
         }
+    }
+
+    public int OnExecute(CommandLineApplication app, IConsole console)
+    {
+        app.ShowHelp();
+        return 0;
     }
 }

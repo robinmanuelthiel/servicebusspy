@@ -14,6 +14,8 @@ namespace ServiceBusSpy.Commands
         [Required]
         [Option(LongName = "queue", ShortName = "q", Description = "The name of the queue to add the message to.")]
         public string Queue { get; }
+
+        [Required]
         [Option(LongName = "connectionString", ShortName = "c", Description = "The connection string of your service bus.")]
         public string ConnectionString { get; }
 
