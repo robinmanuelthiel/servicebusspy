@@ -1,6 +1,8 @@
-[![NuGet](https://img.shields.io/nuget/vpre/servicebusspy.svg)](https://www.nuget.org/packages/ServiceBusSpy)
+<img src="https://raw.githubusercontent.com/robinmanuelthiel/servicebusspy/master/logo.png" height="100">
 
 # Service Bus Spy
+
+[![NuGet](https://img.shields.io/nuget/vpre/servicebusspy.svg)](https://www.nuget.org/packages/ServiceBusSpy)
 
 A simple command line tool to silently inspect Azure Service Bus messages without touching them. As the [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer) runs on Winodws only, I descided to quickly write a **cross-platform** command line tool based on .NET Core to explore messages in Azure Service Bus.
 
