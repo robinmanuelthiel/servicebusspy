@@ -2,24 +2,24 @@
 
 # Service Bus Spy
 
-A simple command line tool to silently inspect Azure Service Bus messages without touching them.
+A simple command line tool to silently inspect Azure Service Bus messages without touching them. As the [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer) runs on Winodws only, I descided to quickly write a **cross-platform** command line tool based on .NET Core to explore messages in Azure Service Bus.
 
 ### Installation
 
 Make sure to have at least [.NET Core 2.1](https://dotnet.microsoft.com/download) installed on your machine.
 
 ```bash
-dotnet tool install servicebusspy -g
+dotnet tool install servicebusspy --global
 ```
 
 ### Update or remove
 
 ```bash
 # Update
-dotnet tool update servicebusspy -g
+dotnet tool update servicebusspy --global
 
 # Remove
-dotnet tool uninstall servicebusspy -g
+dotnet tool uninstall servicebusspy --global
 ```
 
 ## Usage
