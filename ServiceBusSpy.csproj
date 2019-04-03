@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <ToolCommandName>servicebusspy</ToolCommandName> 
+    <PackAsTool>true</PackAsTool>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+  
+  <!-- NuGet -->
+  <PropertyGroup>
+    <Title>Service Bus Spy</Title>
+    <Description>Inspect Azure Service Bus messages silently without touching them.</Description>
+    <PackageVersion>0.1.0-pre</PackageVersion>
+    <IsPackable>true</IsPackable> 
+    <Authors>Robin-Manuel Thiel</Authors>
+    <PackageTags>Azure, Service Bus</PackageTags>
+    <License>MIT</License>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="2.3.3" />
+    <PackageReference Include="Microsoft.Azure.ServiceBus" Version="3.4.0" />
+  </ItemGroup>
+</Project>
