@@ -1,8 +1,8 @@
+[![NuGet](https://img.shields.io/nuget/vpre/servicebusspy.svg)](https://www.nuget.org/packages/ServiceBusSpy)
+
 <img src="https://raw.githubusercontent.com/robinmanuelthiel/servicebusspy/master/logo.png" height="90">
 
 # Azure Service Bus Spy
-
-[![NuGet](https://img.shields.io/nuget/vpre/servicebusspy.svg)](https://www.nuget.org/packages/ServiceBusSpy)
 
 A simple command line tool to silently inspect Azure Service Bus messages without touching them.
 
