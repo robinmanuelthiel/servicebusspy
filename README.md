@@ -53,3 +53,11 @@ servicebusspy subscribe
   --connectionString "YOUR_SERVICE_BUS_CONNECTION_STRING" \
   --verbose # optional
 ```
+
+### Delete (dead letters) all messages in a queue
+
+```bash
+servicebusspy clear 
+  --queue "Test" \
+  --connectionString "YOUR_SERVICE_BUS_CONNECTION_STRING"
+```
