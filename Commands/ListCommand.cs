@@ -38,6 +38,7 @@ namespace ServiceBusSpy.Commands
 
                 message = await receiver.PeekAsync();
             }
+            await receiver.CloseAsync();
             return 0;
         }
     }

@@ -5,16 +5,13 @@ using System.Threading.Tasks;
 using McMaster.Extensions.CommandLineUtils;
 using Microsoft.Azure.ServiceBus;
 using Microsoft.Azure.ServiceBus.Core;
+using Newtonsoft.Json;
 
 namespace ServiceBusSpy.Commands
 {
-    [Command("add", Description = "Adds a message to a queue.")]
-    public class AddCommand
+    [Command("clear", Description = "Sends all messages from a queue to the dead letter queue.")]
+    public class ClearCommand
     {
-        [Required]
-        [Argument(0, Name = "Message", Description = "The message content as string.")]
-        public string Message { get; }
-
         [Required]
         [Option(LongName = "queue", ShortName = "q", Description = "The name of the queue to add the message to.")]
         public string Queue { get; }
@@ -25,11 +22,22 @@ namespace ServiceBusSpy.Commands
 
         public async Task<int> OnExecuteAsync(CommandLineApplication app, IConsole console)
         {
-            var messageBody = System.Text.Encoding.Unicode.GetBytes(Message);
             var client = new QueueClient(ConnectionString, Queue);
-            await client.SendAsync(new Message(messageBody));
-            console.WriteLine("Added message to queue.");
-            await client.CloseAsync();
+            var receiver = new MessageReceiver(ConnectionString, Queue, ReceiveMode.PeekLock);
+            var message = await receiver.PeekAsync();
+
+            var count = 0;
+            while (message != null)
+            {
+                console.Write("...");
+                var fullMessage = await receiver.ReceiveAsync();
+                await receiver.DeadLetterAsync(fullMessage.SystemProperties.LockToken);
+                count++;
+                message = await receiver.PeekAsync();
+            }
+            console.WriteLine();
+            console.WriteLine($"Sent {count} message(s) to the dead letter queue.");
+
             return 0;
         }
     }

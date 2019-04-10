@@ -6,6 +6,7 @@ using ServiceBusSpy.Commands;
 [Subcommand(typeof(ListCommand))]
 [Subcommand(typeof(AddCommand))]
 [Subcommand(typeof(SubscribeCommand))]
+[Subcommand(typeof(ClearCommand))]
 public class Program
 {
     public static int Main(string[] args)

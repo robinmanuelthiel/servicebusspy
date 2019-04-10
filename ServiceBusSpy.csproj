@@ -10,7 +10,7 @@
   <PropertyGroup>
     <Title>Service Bus Spy</Title>
     <Description>Inspect Azure Service Bus messages silently without touching them.</Description>
-    <PackageVersion>1.1.0</PackageVersion>
+    <PackageVersion>1.2.0</PackageVersion>
     <IsPackable>true</IsPackable> 
     <Authors>Robin-Manuel Thiel</Authors>
     <PackageTags>Azure; Service Bus</PackageTags>
