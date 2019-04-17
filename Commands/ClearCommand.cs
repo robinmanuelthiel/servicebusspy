@@ -24,20 +24,20 @@ namespace ServiceBusSpy.Commands
         {
             var client = new QueueClient(ConnectionString, Queue);
             var receiver = new MessageReceiver(ConnectionString, Queue, ReceiveMode.PeekLock);
-            var message = await receiver.PeekAsync();
-
             var count = 0;
-            while (message != null)
+
+            while (await receiver.PeekAsync() != null)
             {
                 console.Write("...");
                 var fullMessage = await receiver.ReceiveAsync();
                 await receiver.DeadLetterAsync(fullMessage.SystemProperties.LockToken);
                 count++;
-                message = await receiver.PeekAsync();
             }
+
             console.WriteLine();
             console.WriteLine($"Sent {count} message(s) to the dead letter queue.");
 
+            await receiver.CloseAsync();
             return 0;
         }
     }

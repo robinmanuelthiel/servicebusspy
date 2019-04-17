@@ -25,18 +25,35 @@ namespace ServiceBusSpy.Commands
 
         public async Task<int> OnExecuteAsync(CommandLineApplication app, IConsole console)
         {
+            var batchSize = 100;
             var receiver = new MessageReceiver(ConnectionString, Queue, ReceiveMode.PeekLock);
-            var message = await receiver.PeekAsync();
-            while (message != null)
-            {
-                Console.WriteLine(System.Text.Encoding.Unicode.GetString(message.Body));
-                if (Verbose)
-                {
-                    Console.WriteLine(JsonConvert.SerializeObject(message));
-                    Console.WriteLine();
-                }
 
-                message = await receiver.PeekAsync();
+            // Get first batch
+            var messages = await receiver.PeekAsync(batchSize);
+
+            // Check, if any messages are in the queue
+            if (messages.Count == 0)
+            {
+                console.WriteLine("No messages in the queue.");
+            }
+            else
+            {
+                // Process messages
+                while (messages.Count > 0)
+                {
+                    foreach (var message in messages)
+                    {
+                        Console.WriteLine(System.Text.Encoding.Unicode.GetString(message.Body));
+                        if (Verbose)
+                        {
+                            Console.WriteLine(JsonConvert.SerializeObject(message));
+                            Console.WriteLine();
+                        }
+                    }
+
+                    // Get next batch
+                    messages = await receiver.PeekAsync(batchSize);
+                }
             }
             await receiver.CloseAsync();
             return 0;
